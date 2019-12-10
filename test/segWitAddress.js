@@ -4,7 +4,9 @@ const TESTNET = bitcoin.networks.testnet
 
  const main = () =>{
     const keyPair = bitcoin.ECPair.makeRandom({ network: TESTNET })
-    const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey,  network: TESTNET })
+    const { address } = bitcoin.payments.p2sh({
+      redeem: bitcoin.payments.p2wpkh({ pubkey: keyPair.publicKey, network: TESTNET }),
+    });
     return { keyPair: keyPair.toWIF(), address }
 }
 
@@ -12,6 +14,7 @@ module.exports = main
 
 if (require.main === module) {
     console.log(main())
+
 }
 
 // {
