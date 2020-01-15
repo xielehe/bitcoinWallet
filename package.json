@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/xielehe/bitcoinWallet#readme",
   "dependencies": {
-    "axios": "^0.19.0",
-    "bitcoinjs-lib": "^5.1.6",
+    "axios": "^0.19.1",
+    "bitcoinjs-lib": "^5.1.7",
     "dotenv": "^8.2.0",
     "ramda": "^0.26.1"
   },

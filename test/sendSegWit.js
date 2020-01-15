@@ -11,7 +11,9 @@ const TESTNET = bitcoin.networks.testnet
       const scriptPubKey = bitcoin.script.scriptHash.output.encode(redeemScriptHash)
 
       const txb = new bitcoin.TransactionBuilder(TESTNET)
-      txb.addInput("66123eec6ca81f29f2f224ecf70fea978f009654acb154ca282ac92d2a05d1b0",0,
+      txb.addInput(
+        "66123eec6ca81f29f2f224ecf70fea978f009654acb154ca282ac92d2a05d1b0",
+        0,
         0xffffffff,
         scriptPubKey
       )
@@ -20,4 +22,3 @@ const TESTNET = bitcoin.networks.testnet
       const tx = txb.build()
       var tx_raw = tx.toHex()
       console.log(tx_raw)
-
